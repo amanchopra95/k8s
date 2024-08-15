@@ -1,5 +1,5 @@
 import axios from "axios";
-import react, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import CommentCreate from "../Comments/CommentCreate";
 import CommentList from "../Comments/CommentList";
 
@@ -7,7 +7,7 @@ const PostList = () => {
     const [posts, setPosts] = useState({});
 
     const getPosts = async () => {
-        const res = await axios.get("http://localhost:4000/posts");
+        const res = await axios.get("http://localhost:4002/posts");
         setPosts(res.data);
     }
 
@@ -16,15 +16,17 @@ const PostList = () => {
     }, []);
 
     const renderedPosts = Object.values(posts).map((post) => {
-        return <div className="col" key={post.id}>
-        <div className="card">
-            <div className="card-body">
-                <h3>{post.title}</h3>
-                <CommentList postId={post.id}/>
-                <CommentCreate postId={post.id}/>
+        return (
+            <div className="col" key={post.id}>
+                <div className="card">
+                    <div className="card-body">
+                        <h3>{post.title}</h3>
+                        <CommentList comments={post.comments}/>
+                        <CommentCreate postId={post.id}/>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
+        )
     })
 
     return <div className="row justify-content-between">
