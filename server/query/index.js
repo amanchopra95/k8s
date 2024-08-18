@@ -29,7 +29,6 @@ const handleEvent = (type, data) => {
         const post = posts[postId]
         if (post) {
             const comment = post.comments.find(comment => comment.id === id)
-
             comment.status = status
             comment.content = content
         }

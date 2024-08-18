@@ -5,7 +5,8 @@ const app = express()
 app.use(express.json())
 
 app.post('/events', async (req, res) => {
-    const {type, data} = req.body
+    const {type, data} = req.body;
+    console.log("Event Received", type);
     if (type === 'COMMENTCREATED') {
         const status = data.content.includes('orange') ? 'rejected' : 'approved'
 
