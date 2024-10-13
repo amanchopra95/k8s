@@ -1,8 +1,9 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const { randomBytes } = require('crypto')
-const cors = require('cors')
-const axios = require('axios')
+import express from "express";
+import bodyParser from "body-parser";
+import {randomBytes} from "crypto"
+import cors from "cors";
+import axios from "axios";
+
 
 const app = express()
 
