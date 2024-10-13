@@ -18,6 +18,8 @@ const CommentList = ({ comments = []}) => {
                 content = "This comment has been rejected by moderation";
                 break;
             }
+            default:
+                break;
         }
         return <li key={comment.id}>{content}</li>
     })
