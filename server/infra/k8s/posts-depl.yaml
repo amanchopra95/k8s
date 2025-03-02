@@ -15,7 +15,7 @@ spec:
       containers:
         - name: posts
           image: blogs/posts
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
 
 --- 
 apiVersion: v1

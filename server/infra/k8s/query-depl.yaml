@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: query
-          image: blogs/query
-          imagePullPolicy: Never
+          image: blogs/query:0.0.6
+          imagePullPolicy: IfNotPresent
 
 ---
 apiVersion: v1
